@@ -9,10 +9,12 @@ interface PageWrapperProps {
 
 export const PageWrapper = ({ children, className }: PageWrapperProps) => {
     return (
-        <div className={cn('relative mx-auto w-full max-w-[1440px]', className)}>
-            <div className="absolute top-0 -left-[6px] h-full w-[6px] bg-black" />
-            <div className="absolute top-0 -right-[6px] h-full w-[6px] bg-black" />
-
+        <div
+            className={cn(
+                'relative mx-auto w-full max-w-[1440px] outline-[6px] outline-black',
+                className
+            )}
+        >
             <Navbar />
             <div className="flex w-full flex-col overflow-hidden">{children}</div>
         </div>
